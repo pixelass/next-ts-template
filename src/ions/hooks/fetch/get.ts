@@ -1,8 +1,13 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 
-const useGet = url => {
-	const [state, setState] = useState({
+interface State<T = Record<string, unknown>> {
+	data: null | T;
+	loading: boolean;
+	error: null | AxiosError;
+}
+const useGet = <T>(url: string) => {
+	const [state, setState] = useState<State<T>>({
 		data: null,
 		loading: false,
 		error: null,
@@ -22,10 +27,10 @@ const useGet = url => {
 					loading: false,
 				});
 			})
-			.catch(error => {
+			.catch((error: unknown) => {
 				setState(({ data }) => ({
 					data,
-					error,
+					error: error as AxiosError,
 					loading: false,
 				}));
 			});

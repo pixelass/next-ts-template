@@ -33,6 +33,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# typescript
+tsconfig.tsbuildinfo
+
 # cypress
 cypress/downloads
 cypress/videos

@@ -5,7 +5,7 @@
  * @example
  * rem(10) // "10rem"
  */
-export const rem = n => `${n}rem`;
+export const rem = (n: number): `${number}rem` => `${n}rem`;
 
 /**
  * Converts a number from pixel to rem and adds the unit suffix.
@@ -16,4 +16,4 @@ export const rem = n => `${n}rem`;
  * @example
  * pxToRem(16) // "1rem"
  */
-export const pxToRem = (pixel, rootFontSize = 16) => rem(pixel / rootFontSize);
+export const pxToRem = (pixel: number, rootFontSize = 16) => rem(pixel / rootFontSize);

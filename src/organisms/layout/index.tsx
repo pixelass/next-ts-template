@@ -1,8 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Footer from "../footer";
 import Header from "../header";
 
-const Layout = ({ children }) => {
+interface Props {
+	children?: ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
 	return (
 		<>
 			<Header />

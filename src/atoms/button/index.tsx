@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import StyledButton from "./styled";
 
 /**
@@ -8,7 +8,7 @@ import StyledButton from "./styled";
  * @return {JSX.Element}
  * @constructor
  */
-const Button = ({ children, ...props }) => {
+const Button = ({ children, ...props }: HTMLAttributes<HTMLButtonElement>) => {
 	return <StyledButton {...props}>{children}</StyledButton>;
 };
 

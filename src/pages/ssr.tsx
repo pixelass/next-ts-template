@@ -1,9 +1,18 @@
 import axios from "axios";
+import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import Layout from "../organisms/layout";
 
-const Page = ({ data, error }) => {
+interface ErrorType {
+	message: string;
+}
+
+interface Props {
+	data?: Record<string, unknown>;
+	error?: ErrorType;
+}
+const Page: NextPage<Props> = ({ data, error }) => {
 	return (
 		<Layout>
 			<Head>

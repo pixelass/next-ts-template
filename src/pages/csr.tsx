@@ -1,11 +1,11 @@
+import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
-import Button from "../atoms/button";
-import useGet from "../ions/hooks/fetch/get";
 import Layout from "../organisms/layout";
+import useGet from "../ions/hooks/fetch/get";
 
-const Page = () => {
-	const { data, loading, error } = useGet("/api/hello");
+const Page: NextPage = () => {
+	const { data, loading, error } = useGet("https://rickandmortyapi.com/api/character/");
 
 	return (
 		<Layout>
@@ -21,7 +21,6 @@ const Page = () => {
 					<code>{JSON.stringify(data, null, 4)}</code>
 				</pre>
 			)}
-			<Button>Click me</Button>
 		</Layout>
 	);
 };
